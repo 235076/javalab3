@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="dateLabel" text="Label">
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin></Label>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="menu">
+                  <items>
+                        <MenuItem fx:id="plMItem" mnemonicParsing="false" onAction="#polishLanguage" text="pl/PL" />
+                        <MenuItem fx:id="ukMItem" mnemonicParsing="false" onAction="#englishLanguage" text="en/UK" />
+                        <MenuItem fx:id="usMItem" mnemonicParsing="false" onAction="#americaLanguage" text="en/US" />
+                    <MenuItem fx:id="close" mnemonicParsing="false" onAction="#closeApp" text="Close" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label fx:id="addLabel" text="Dodaj element:">
+               <padding>
+                  <Insets left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </Label>
+            <HBox spacing="10.0">
+               <children>
+                  <TextField fx:id="nameField" promptText="nazwa" />
+                  <TextField fx:id="valueField" promptText="wartosc" />
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#addButtonClicked" text="Dodaj" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="toSortLabel" text="Dane do sortowania:" />
+            <ListView fx:id="notSortedList" prefHeight="340.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="sortedLabel" text="Posortowane:" />
+            <ListView fx:id="sortedList" prefHeight="340.0" prefWidth="300.0" />
+         </children>
+      </VBox>
+   </center>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="aLabel" text="Alogorytm:" />
+            <ChoiceBox fx:id="algorithmChoice" prefWidth="150.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ChoiceBox>
+            <Button fx:id="sortButton" mnemonicParsing="false" onAction="#SortButtonClicked" text="Sortuj">
+               <VBox.margin>
+                  <Insets bottom="8.0" left="20.0" right="8.0" top="8.0" />
+               </VBox.margin>
+            </Button>
+            <ImageView fx:id="imageView" fitHeight="127.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../kaczka.jpg" />
+               </image></ImageView>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
